@@ -1,0 +1,38 @@
+<html>  
+<head>
+  <title>
+
+  </title>
+  <script id="angularScript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+  <script src="main.js"></script>
+</head>
+<body ng-app="app">
+  <div ng-controller="MainCtrl">
+    <div container>
+      <div id="create">
+      <label>Title:
+      <input ng-model="newTitle" type="text">
+      </label>
+
+      <label>Text:
+      <input ng-model="newContent" type="text">
+      </label>
+
+
+      <label>Link:
+      <input ng-model="newLink" type="text">
+      </label>
+      <button type="submit" ng-click="submitPost()">Submit</button>
+
+      </div>
+
+      <ul ng-repeat="result in results.data">
+        <li><a ng-href="{{result.link}}">{{result.title}}</a></li>
+        <li>{{result.content}}</li>
+        <li>{{result.timestamp | date}}</li>
+      </ul>
+
+    </div>
+  </div>
+</body>
+</html>
